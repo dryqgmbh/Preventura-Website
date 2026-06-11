@@ -32,7 +32,7 @@ Website (gegen Choice-Paralysis), Add-on-Upsell in der App.
 ┌──────────────────────┐     ┌───────────────────────────┐
 │  PREVENTURA CORE      │     │  PREVENTURA CORE+ ★ BELIEBT│
 │  11 Biomarker         │     │  16 Biomarker              │
-│  149 € VK             │     │  269 € VK                  │
+│  169 € (Einmalkauf)   │     │  269 € (Einmalkauf)        │
 │  + Add-ons in App ▸   │     │  inkl. erweitertem Umfang  │
 └──────────────────────┘     └───────────────────────────┘
         │                              ▲
@@ -55,7 +55,7 @@ Website (gegen Choice-Paralysis), Add-on-Upsell in der App.
 
 ### Produkt-Detail (website-relevant: Biomarker + VK)
 
-**Preventura Core — 149 € | 11 Biomarker**
+**Preventura Core — 169 € (Einmalkauf) | 11 Biomarker**
 HbA1c · Gesamtcholesterin · HDL · LDL · Triglyceride · ApoB · hs-CRP ·
 Cystatin C · Kreatinin · GPT/ALT · GGT
 → Fokus: Stoffwechsel, Herz-Kreislauf, Entzündung, Nieren-/Leberfunktion.
@@ -73,13 +73,32 @@ Alle 11 Core-Marker **plus**: Vitamin D (25-OH) · Ferritin · TSH · Holo-TC ·
 | Frauen Gesundheit | 129 € | Estradiol/E2 · Progesteron · LH · FSH · Prolaktin · Testosteron · SHBG (7) |
 | Schilddrüse Pro | 59 € | FT3 · FT4 · TPO-AK/MAK (3) |
 
+### Angebotsstruktur: Einmalkauf + Abos
+
+Drei Kaufwege — Einmalkauf als niedrigschwelliger Einstieg, zwei Abos als
+wiederkehrender Umsatz (das VC-relevante Herzstück):
+
+| Angebot | Preis | Inhalt / Jahr | Test-Ökonomie |
+|---|---|---|---|
+| **Einmalkauf Core** | 169 € | 1× Core | 169 €/Test |
+| **Einmalkauf Core+** | 269 € | 1× Core+ | 269 €/Test |
+| **Abo Premium** | 99 € 1. Monat, dann **20 €/Monat** | 2× Core+ | ≈ 120 €/Test (Y2+) |
+| **Abo Complete** | 99 € 1. Monat, dann **55 €/Monat** | 2× Core + 2× Core+ | ≈ 165 €/Test |
+
+- **Premium** Jahresumsatz: Y1 ≈ 319 € (99 + 11×20), Y2+ ≈ 240 €.
+- **Complete** Jahresumsatz: Y1 ≈ 704 € (99 + 11×55), Y2+ ≈ 660 €.
+- **„Erster Monat 99 €"** ist clever: deckt früh Kit-/Erst-Logistikkosten und
+  filtert Abbrecher, bevor sie Marge kosten.
+
+**Website-Empfehlung (CRO):** Abo als Default anzeigen (Toggle „Abo / einmalig"),
+Complete oder Premium als „Beliebt" ankern, Einmalkauf als sekundärer Weg. So
+maximieren wir wiederkehrenden Umsatz, ohne Trial-Käufer zu verlieren.
+
 ### ⚠️ Noch zu klären
-- **Abrechnungs-Rhythmus** (einmalig / quartalsweise / monatliches Abo?) — die
-  VK-Preise (149/269 €) deuten eher auf Einzeltest oder quartalsweise als auf
-  monatlich hin. Für das Rythm-artige Tracking-Narrativ ist eine Abo-Kadenz
-  (z. B. quartalsweise) zu definieren.
 - **Einzelne Add-on-Marker** final mit **ZOTZ** (Labor) bestätigen.
-- Mindestlaufzeit / Pausier- & Kündigungslogik.
+- Mindestlaufzeit / Pausier- & Kündigungslogik der Abos.
+- Versand-/Test-Kadenz der Abos (z. B. Premium alle 6 Monate, Complete
+  quartalsweise) — für Logistik & Narrativ definieren.
 
 ---
 
@@ -224,7 +243,8 @@ The Quality Group (ESN + More Nutrition, >1 Mrd. € Umsatz, CVC-backed,
 
 ## 8. Offene Punkte / nächste Schritte
 - [x] Core/Core+/Add-on-Daten befüllt (Biomarker + VK) → §1, Anhang A.
-- [ ] Abrechnungs-Rhythmus festlegen (einmalig / quartalsweise / Abo).
+- [x] Modell festgelegt: Einmalkauf (169/269 €) + Abo Premium (20 €/Mo) + Complete (55 €/Mo).
+- [ ] **Premium-Marge prüfen/entscheiden** (Preis anheben, GOÄ verhandeln oder als Funnel-Anker akzeptieren) → Anhang A.
 - [ ] Add-on-Marker final mit ZOTZ bestätigen + GOÄ-Faktor verhandeln (Ziel ≤0,4).
 - [ ] Vollkosten ergänzen (Kit, Versand, Lab-Handling, App/Infra, CAC) → CM2/CM3, LTV:CAC.
 - [ ] Anwaltliche Freigabe der Claims (HWG/HCVO).
@@ -250,7 +270,7 @@ App-/Infra-Kosten und **CAC** sind hier **noch nicht** enthalten.
 
 | Produkt | VK | EK @0,5 | DB @0,5 | EK @0,4 | DB @0,4 | EK @0,3 | DB @0,3 |
 |---|---|---|---|---|---|---|---|
-| Core | 149 € | 33,97 € | 115,03 € (77 %) | 27,67 € | 121,33 € (81 %) | 21,38 € | 127,62 € (86 %) |
+| Core | 169 € | 34,27 € | 134,73 € (80 %) | 27,97 € | 141,03 € (83 %) | 21,68 € | 147,32 € (87 %) |
 | Core+ Initial | 269 € | 87,07 € | 181,93 € (68 %) | 70,51 € | 198,49 € (74 %) | 53,96 € | 215,04 € (80 %) |
 | Männer Gesundheit | 99 € | 58,88 € | 40,12 € (41 %) | 47,44 € | 51,56 € (52 %) | 36,00 € | 63,00 € (64 %) |
 | Frauen Gesundheit | 129 € | 73,32 € | 55,68 € (43 %) | 59,08 € | 69,92 € (54 %) | 44,84 € | 84,16 € (65 %) |
@@ -283,6 +303,37 @@ App-/Infra-Kosten und **CAC** sind hier **noch nicht** enthalten.
 4. **Echte Contribution Margin braucht Vollkosten.** Vor VC-Gesprächen die
    Tabelle um **Kit-Kosten, Versand/Rückversand, Lab-Handling, App/Infra und
    CAC** ergänzen → daraus echte CM2/CM3 und LTV:CAC ableiten. (→ Backlog)
+
+### Abo-Ökonomie 🚩 (Premium ist margendünn — bitte prüfen)
+
+DB **vor Fulfillment (Kit/Versand/Rücksendung/Handling) und CAC**, Core+ als
+„Standard" (ohne Lp(a)) gerechnet, GOÄ 0,5:
+
+| Abo | Umsatz Y2+ | Lab-EK Y2+ | Payment Y2+ | DB Y2+ (vor Fulfillment+CAC) | Tests/Jahr |
+|---|---|---|---|---|---|
+| Premium | 240 € | 2× 74,04 = 148,08 € | ≈ 6,60 € | **≈ 85 €** | 2 (2× Core+) |
+| Complete | 660 € | 62,96 + 148,08 = 211,04 € | ≈ 12,90 € | **≈ 436 €** | 4 (2× Core + 2× Core+) |
+
+**Das Problem bei Premium (20 €/Monat):**
+- Bei 2 Tests/Jahr fallen **2× Kit + Versand + Rücksendung + Lab-Handling** an.
+  Schon bei ~25 €/Test Fulfillment bleibt Y2+ nur **~35 € DB für das ganze Jahr —
+  und das ist *vor* CAC.** Damit ist Premium real grenzwertig bis defizitär.
+- Premium preist Core+ effektiv auf **~120 €/Test** (Y2+) — gegenüber 269 €
+  Einmalkauf ein sehr steiler Rabatt, der margenstarke Einmalkäufe
+  **kannibalisieren** kann.
+
+**Empfehlungen (eine oder mehrere):**
+1. **Premium auf ~25–29 €/Monat** anheben → schützt Marge, Rabatt vs. Einmalkauf
+   bleibt attraktiv.
+2. **GOÄ ≤ 0,4** mit ZOTZ verhandeln → Premium-DB Y2+ steigt deutlich.
+3. Premium **bewusst als margenarmer Funnel-/Retention-Anker** akzeptieren und
+   Profit über **Add-on-Upsells** (App) + Upgrade auf Complete holen — dann aber
+   in den Unit Economics klar so deklarieren.
+4. **Complete ist der Profit-Anker** (≈ 436 € DB vor Fulfillment/CAC) → im
+   Pricing-/CRO-Layout nach vorne stellen.
+
+> Sobald Fulfillment-Kosten vorliegen, rechne ich CM2/CM3 und LTV:CAC je Abo
+> sauber durch.
 
 ### Lp(a)-Logik (Margenvorteil bei Folgetests)
 Lp(a) wird nur **einmalig** gemessen → ab dem 2. Core+ entfällt der Lp(a)-EK
