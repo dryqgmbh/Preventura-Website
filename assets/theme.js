@@ -120,11 +120,58 @@
     });
   }
 
+  /* --- Sticky add-to-cart -------------------------------------------- */
+  function initStickyAtc() {
+    var bar = document.querySelector('[data-sticky-atc]');
+    var form = document.querySelector('[data-product-form]');
+    var mainBtn = form ? form.querySelector('[data-add-to-cart]') : null;
+    if (!bar || !form || !mainBtn) return;
+
+    var stickyBtn = bar.querySelector('[data-sticky-add]');
+    if (stickyBtn) {
+      stickyBtn.addEventListener('click', function () {
+        if (typeof form.requestSubmit === 'function') {
+          form.requestSubmit();
+        } else {
+          mainBtn.click();
+        }
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        bar.hidden = entries[0].isIntersecting;
+      }, { rootMargin: '0px 0px -80px 0px' });
+      observer.observe(mainBtn);
+    }
+  }
+
+  /* --- Pricing billing toggle ---------------------------------------- */
+  function initPricingToggle() {
+    document.querySelectorAll('[data-pricing-toggle]').forEach(function (toggle) {
+      var section = toggle.closest('.pricing');
+      if (!section) return;
+      var buttons = toggle.querySelectorAll('[data-billing-switch]');
+      var cards = section.querySelectorAll('[data-billing]');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-billing-switch');
+          buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+          cards.forEach(function (card) {
+            card.hidden = card.getAttribute('data-billing') !== target;
+          });
+        });
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileNav();
     initGallery();
     initVariantSelector();
     initQuantity();
     initAddToCart();
+    initStickyAtc();
+    initPricingToggle();
   });
 })();

@@ -1,0 +1,90 @@
+<div class="section comparison" style="background:{{ section.settings.background }};">
+  <div class="page-width">
+    <div class="section__header section__header--center">
+      {%- if section.settings.eyebrow != blank -%}<p class="section__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2 class="section__heading">{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.subheading != blank -%}<p class="section__subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+    </div>
+
+    <div class="comparison__table-wrap">
+      <table class="comparison__table">
+        <thead>
+          <tr>
+            <th class="comparison__marker-head">{{ section.settings.col_marker }}</th>
+            <th class="comparison__plan-head">{{ section.settings.col_core }}</th>
+            <th class="comparison__plan-head comparison__plan-head--accent">{{ section.settings.col_coreplus }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}>
+              <td class="comparison__marker">
+                <span class="comparison__marker-name">{{ block.settings.marker }}</span>
+                {%- if block.settings.category != blank -%}<span class="comparison__marker-cat">{{ block.settings.category }}</span>{%- endif -%}
+              </td>
+              <td class="comparison__cell">
+                {%- if block.settings.in_core -%}{% render 'icon', name: 'check' %}{%- else -%}<span class="comparison__dash">–</span>{%- endif -%}
+              </td>
+              <td class="comparison__cell comparison__cell--accent">
+                {%- if block.settings.in_coreplus -%}{% render 'icon', name: 'check' %}{%- else -%}<span class="comparison__dash">–</span>{%- endif -%}
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.note != blank -%}<p class="comparison__note">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Biomarker-Vergleich",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Kleiner Text oben", "default": "Was wir messen" },
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Core vs. Core+ im Überblick" },
+    { "type": "text", "id": "subheading", "label": "Untertitel", "default": "Alle Werte werden in zertifizierten Laboren analysiert und verständlich für dich aufbereitet." },
+    { "type": "text", "id": "col_marker", "label": "Spalte: Biomarker", "default": "Biomarker" },
+    { "type": "text", "id": "col_core", "label": "Spalte: Core", "default": "Core" },
+    { "type": "text", "id": "col_coreplus", "label": "Spalte: Core+", "default": "Core+" },
+    { "type": "textarea", "id": "note", "label": "Hinweis", "default": "Lp(a) wird bei Core+ einmalig als genetische Baseline bestimmt. Die Ergebnisse dienen deiner Information und ersetzen keine ärztliche Diagnose." },
+    { "type": "color", "id": "background", "label": "Hintergrundfarbe", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "marker",
+      "name": "Biomarker",
+      "settings": [
+        { "type": "text", "id": "marker", "label": "Biomarker", "default": "HbA1c" },
+        { "type": "text", "id": "category", "label": "Kategorie (klein)", "default": "Stoffwechsel" },
+        { "type": "checkbox", "id": "in_core", "label": "In Core enthalten", "default": true },
+        { "type": "checkbox", "id": "in_coreplus", "label": "In Core+ enthalten", "default": true }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Biomarker-Vergleich",
+      "blocks": [
+        { "type": "marker", "settings": { "marker": "HbA1c", "category": "Stoffwechsel", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Gesamtcholesterin", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "HDL", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "LDL", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Triglyceride", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "ApoB", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "hs-CRP", "category": "Entzündung", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Cystatin C", "category": "Niere", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Kreatinin", "category": "Niere", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "GPT / ALT", "category": "Leber", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "GGT", "category": "Leber", "in_core": true, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Vitamin D (25-OH)", "category": "Mikronährstoffe", "in_core": false, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Ferritin", "category": "Eisenhaushalt", "in_core": false, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "TSH", "category": "Schilddrüse", "in_core": false, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Holo-TC", "category": "Mikronährstoffe", "in_core": false, "in_coreplus": true } },
+        { "type": "marker", "settings": { "marker": "Lp(a)", "category": "Herz-Kreislauf · einmalig", "in_core": false, "in_coreplus": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,110 @@
+{%- liquid
+  assign abo_plans = section.blocks | where: 'type', 'plan'
+-%}
+<div class="section pricing" id="pricing" style="background:{{ section.settings.background }};">
+  <div class="page-width">
+    <div class="section__header section__header--center">
+      {%- if section.settings.eyebrow != blank -%}<p class="section__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2 class="section__heading">{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.subheading != blank -%}<p class="section__subheading">{{ section.settings.subheading }}</p>{%- endif -%}
+    </div>
+
+    <div class="pricing-toggle" data-pricing-toggle>
+      <button type="button" class="pricing-toggle__btn is-active" data-billing-switch="abo">{{ section.settings.label_abo }}</button>
+      <button type="button" class="pricing-toggle__btn" data-billing-switch="einmalig">{{ section.settings.label_einmalig }}</button>
+    </div>
+
+    <div class="pricing-grid">
+      {%- for block in abo_plans -%}
+        <div class="pricing-card{% if block.settings.highlight %} pricing-card--highlight{% endif %}"
+             data-billing="{{ block.settings.billing }}" {{ block.shopify_attributes }}
+             {% if block.settings.billing != 'abo' %}hidden{% endif %}>
+          {%- if block.settings.badge != blank -%}
+            <span class="pricing-card__badge">{{ block.settings.badge }}</span>
+          {%- endif -%}
+          <h3 class="pricing-card__name">{{ block.settings.name }}</h3>
+          {%- if block.settings.tag != blank -%}<span class="pricing-card__tag">{{ block.settings.tag }}</span>{%- endif -%}
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">{{ block.settings.price }}</span>
+            {%- if block.settings.price_suffix != blank -%}<span class="pricing-card__suffix">{{ block.settings.price_suffix }}</span>{%- endif -%}
+          </div>
+          {%- if block.settings.billing_note != blank -%}
+            <p class="pricing-card__note">{{ block.settings.billing_note }}</p>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="pricing-card__desc">{{ block.settings.description }}</p>
+          {%- endif -%}
+          {%- assign feats = block.settings.features | newline_to_br | split: '<br />' -%}
+          <ul class="pricing-card__features">
+            {%- for feat in feats -%}
+              {%- assign f = feat | strip -%}
+              {%- if f != blank -%}
+                <li>{% render 'icon', name: 'check' %}<span>{{ f }}</span></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          <a href="{{ block.settings.cta_link }}" class="btn {% if block.settings.highlight %}btn--primary{% else %}btn--ghost{% endif %} btn--block btn--large">{{ block.settings.cta_text }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="pricing__footnote">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Pricing / Pläne",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Kleiner Text oben", "default": "Deine Pläne" },
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Wähle deinen Weg zu mehr Klarheit" },
+    { "type": "text", "id": "subheading", "label": "Untertitel", "default": "Einmalig testen oder kontinuierlich tracken – jederzeit in der App erweiterbar." },
+    { "type": "text", "id": "label_abo", "label": "Toggle: Abo-Label", "default": "Abo" },
+    { "type": "text", "id": "label_einmalig", "label": "Toggle: Einmalig-Label", "default": "Einmalig" },
+    { "type": "textarea", "id": "footnote", "label": "Fußnote", "default": "Alle Preise inkl. MwSt. Add-ons (Männer Gesundheit, Frauen Gesundheit, Schilddrüse Pro) sind in der App auf Core aufsattelbar. Preventura ersetzt keine ärztliche Diagnose." },
+    { "type": "color", "id": "background", "label": "Hintergrundfarbe", "default": "#eef6f3" }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        {
+          "type": "select",
+          "id": "billing",
+          "label": "Abrechnungsart",
+          "options": [
+            { "value": "abo", "label": "Abo" },
+            { "value": "einmalig", "label": "Einmalig" }
+          ],
+          "default": "abo"
+        },
+        { "type": "text", "id": "name", "label": "Name", "default": "Premium" },
+        { "type": "text", "id": "tag", "label": "Tag (klein, optional)", "default": "" },
+        { "type": "text", "id": "price", "label": "Preis", "default": "20 €" },
+        { "type": "text", "id": "price_suffix", "label": "Preis-Suffix", "default": "/Monat" },
+        { "type": "text", "id": "billing_note", "label": "Abrechnungs-Hinweis", "default": "99 € im ersten Monat · jederzeit kündbar" },
+        { "type": "text", "id": "description", "label": "Kurzbeschreibung", "default": "Kontinuierliches Tracking mit Core+" },
+        { "type": "textarea", "id": "features", "label": "Leistungen (eine pro Zeile)", "default": "2× Core+ pro Jahr (16 Biomarker)\nInkl. einmaliger Lp(a)-Bestimmung\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)" },
+        { "type": "text", "id": "badge", "label": "Badge (optional)", "default": "" },
+        { "type": "checkbox", "id": "highlight", "label": "Hervorheben", "default": false },
+        { "type": "text", "id": "cta_text", "label": "Button-Text", "default": "Premium starten" },
+        { "type": "url", "id": "cta_link", "label": "Button-Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing / Pläne",
+      "blocks": [
+        { "type": "plan", "settings": { "billing": "abo", "name": "Premium", "price": "20 €", "price_suffix": "/Monat", "billing_note": "99 € im ersten Monat · jederzeit kündbar", "description": "Kontinuierliches Tracking mit Core+", "features": "2× Core+ pro Jahr (16 Biomarker)\nInkl. einmaliger Lp(a)-Bestimmung\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "cta_text": "Premium starten" } },
+        { "type": "plan", "settings": { "billing": "abo", "name": "Complete", "price": "55 €", "price_suffix": "/Monat", "billing_note": "99 € im ersten Monat · jederzeit kündbar", "description": "Maximale Abdeckung – 4 Tests pro Jahr", "features": "2× Core + 2× Core+ pro Jahr\nEngmaschiges Tracking deiner Werte\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "badge": "Beliebt", "highlight": true, "cta_text": "Complete starten" } },
+        { "type": "plan", "settings": { "billing": "einmalig", "name": "Core", "price": "169 €", "price_suffix": "", "billing_note": "Einmalkauf · kein Abo", "description": "Der Einstieg: deine wichtigsten Werte", "features": "11 Biomarker: Stoffwechsel, Herz-Kreislauf, Entzündung, Leber & Niere\nBequeme Probenentnahme zuhause\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "cta_text": "Core kaufen" } },
+        { "type": "plan", "settings": { "billing": "einmalig", "name": "Core+", "price": "269 €", "price_suffix": "", "billing_note": "Einmalkauf · kein Abo", "description": "Umfassend: 16 Biomarker inkl. Lp(a)", "features": "Alle 11 Core-Biomarker\n+ Vitamin D, Ferritin, TSH & Holo-TC\n+ einmalige Lp(a)-Bestimmung (genetische Baseline)\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung", "badge": "Umfassend", "highlight": true, "cta_text": "Core+ kaufen" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

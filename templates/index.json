@@ -2,6 +2,15 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "settings": {
+        "eyebrow": "Gesundheit verstehen",
+        "heading": "Kenne deine Werte. Verstehe deinen Körper.",
+        "subheading": "<p>Einfache Bluttests für zuhause – analysiert in zertifizierten Laboren. Verfolge deine Biomarker über die Zeit und triff informierte Entscheidungen für deine Gesundheit.</p>",
+        "button_text": "Plan wählen",
+        "button_link": "#pricing",
+        "button_text_2": "So funktioniert's",
+        "button_link_2": "#how"
+      },
       "blocks": {
         "b1": { "type": "badge", "settings": { "text": "Bequem von zuhause" } },
         "b2": { "type": "badge", "settings": { "text": "Zertifizierte Labore" } },
@@ -9,39 +18,73 @@
       },
       "block_order": ["b1", "b2", "b3"]
     },
-    "value_props": {
-      "type": "value-props",
+    "pricing": {
+      "type": "pricing-plans",
       "blocks": {
-        "v1": { "type": "prop", "settings": { "icon": "lab", "title": "Zertifizierte Labore", "text": "Analysen nach höchsten medizinischen Standards." } },
-        "v2": { "type": "prop", "settings": { "icon": "clock", "title": "Schnelle Ergebnisse", "text": "Verständliche Auswertung in wenigen Tagen." } },
-        "v3": { "type": "prop", "settings": { "icon": "shield", "title": "Datenschutz", "text": "Ihre Daten sind DSGVO-konform geschützt." } },
-        "v4": { "type": "prop", "settings": { "icon": "truck", "title": "Kostenloser Versand", "text": "Diskrete Lieferung und Rücksendung inklusive." } }
+        "premium": { "type": "plan", "settings": { "billing": "abo", "name": "Premium", "price": "20 €", "price_suffix": "/Monat", "billing_note": "99 € im ersten Monat · jederzeit kündbar", "description": "Kontinuierliches Tracking mit Core+", "features": "2× Core+ pro Jahr (16 Biomarker)\nInkl. einmaliger Lp(a)-Bestimmung\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "cta_text": "Premium starten" } },
+        "complete": { "type": "plan", "settings": { "billing": "abo", "name": "Complete", "price": "55 €", "price_suffix": "/Monat", "billing_note": "99 € im ersten Monat · jederzeit kündbar", "description": "Maximale Abdeckung – 4 Tests pro Jahr", "features": "2× Core + 2× Core+ pro Jahr\nEngmaschiges Tracking deiner Werte\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "badge": "Beliebt", "highlight": true, "cta_text": "Complete starten" } },
+        "core": { "type": "plan", "settings": { "billing": "einmalig", "name": "Core", "price": "169 €", "price_suffix": "", "billing_note": "Einmalkauf · kein Abo", "description": "Der Einstieg: deine wichtigsten Werte", "features": "11 Biomarker: Stoffwechsel, Herz-Kreislauf, Entzündung, Leber & Niere\nBequeme Probenentnahme zuhause\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung\nIn der App erweiterbar (Add-ons)", "cta_text": "Core kaufen" } },
+        "coreplus": { "type": "plan", "settings": { "billing": "einmalig", "name": "Core+", "price": "269 €", "price_suffix": "", "billing_note": "Einmalkauf · kein Abo", "description": "Umfassend: 16 Biomarker inkl. Lp(a)", "features": "Alle 11 Core-Biomarker\n+ Vitamin D, Ferritin, TSH & Holo-TC\n+ einmalige Lp(a)-Bestimmung (genetische Baseline)\nVerständliche Auswertung & ärztliche Einordnung\nKostenloser Versand & Rücksendung", "badge": "Umfassend", "highlight": true, "cta_text": "Core+ kaufen" } }
       },
-      "block_order": ["v1", "v2", "v3", "v4"]
+      "block_order": ["premium", "complete", "core", "coreplus"]
     },
     "how_it_works": {
       "type": "how-it-works",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "1. Test bestellen", "text": "Wählen Sie Ihren Gesundheitstest – diskret nach Hause geliefert." } },
+        "s1": { "type": "step", "settings": { "title": "1. Plan wählen", "text": "Wähle Core, Core+ oder ein Abo – dein Kit kommt diskret nach Hause." } },
         "s2": { "type": "step", "settings": { "title": "2. Probe entnehmen", "text": "Einfache Entnahme zuhause in wenigen Minuten und kostenlos zurücksenden." } },
-        "s3": { "type": "step", "settings": { "title": "3. Ergebnisse erhalten", "text": "Verständliche Auswertung in Ihrem Dashboard – inkl. Empfehlungen." } }
+        "s3": { "type": "step", "settings": { "title": "3. Werte verstehen", "text": "Verständliche Auswertung in deinem Dashboard – inkl. ärztlicher Einordnung." } }
       },
       "block_order": ["s1", "s2", "s3"]
     },
-    "featured": {
-      "type": "featured-collection",
-      "settings": { "products_to_show": 4 }
+    "comparison": {
+      "type": "plan-comparison",
+      "blocks": {
+        "m1": { "type": "marker", "settings": { "marker": "HbA1c", "category": "Stoffwechsel", "in_core": true, "in_coreplus": true } },
+        "m2": { "type": "marker", "settings": { "marker": "Gesamtcholesterin", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        "m3": { "type": "marker", "settings": { "marker": "HDL", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        "m4": { "type": "marker", "settings": { "marker": "LDL", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        "m5": { "type": "marker", "settings": { "marker": "Triglyceride", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        "m6": { "type": "marker", "settings": { "marker": "ApoB", "category": "Herz-Kreislauf", "in_core": true, "in_coreplus": true } },
+        "m7": { "type": "marker", "settings": { "marker": "hs-CRP", "category": "Entzündung", "in_core": true, "in_coreplus": true } },
+        "m8": { "type": "marker", "settings": { "marker": "Cystatin C", "category": "Niere", "in_core": true, "in_coreplus": true } },
+        "m9": { "type": "marker", "settings": { "marker": "Kreatinin", "category": "Niere", "in_core": true, "in_coreplus": true } },
+        "m10": { "type": "marker", "settings": { "marker": "GPT / ALT", "category": "Leber", "in_core": true, "in_coreplus": true } },
+        "m11": { "type": "marker", "settings": { "marker": "GGT", "category": "Leber", "in_core": true, "in_coreplus": true } },
+        "m12": { "type": "marker", "settings": { "marker": "Vitamin D (25-OH)", "category": "Mikronährstoffe", "in_core": false, "in_coreplus": true } },
+        "m13": { "type": "marker", "settings": { "marker": "Ferritin", "category": "Eisenhaushalt", "in_core": false, "in_coreplus": true } },
+        "m14": { "type": "marker", "settings": { "marker": "TSH", "category": "Schilddrüse", "in_core": false, "in_coreplus": true } },
+        "m15": { "type": "marker", "settings": { "marker": "Holo-TC", "category": "Mikronährstoffe", "in_core": false, "in_coreplus": true } },
+        "m16": { "type": "marker", "settings": { "marker": "Lp(a)", "category": "Herz-Kreislauf · einmalig", "in_core": false, "in_coreplus": true } }
+      },
+      "block_order": ["m1","m2","m3","m4","m5","m6","m7","m8","m9","m10","m11","m12","m13","m14","m15","m16"]
+    },
+    "value_props": {
+      "type": "value-props",
+      "blocks": {
+        "v1": { "type": "prop", "settings": { "icon": "lab", "title": "Zertifizierte Labore", "text": "Analyse nach hohen medizinischen Standards." } },
+        "v2": { "type": "prop", "settings": { "icon": "clock", "title": "Schnelle Ergebnisse", "text": "Verständliche Auswertung in wenigen Tagen." } },
+        "v3": { "type": "prop", "settings": { "icon": "shield", "title": "Datenschutz", "text": "Deine Daten sind DSGVO-konform geschützt." } },
+        "v4": { "type": "prop", "settings": { "icon": "truck", "title": "Kostenloser Versand", "text": "Diskrete Lieferung und Rücksendung inklusive." } }
+      },
+      "block_order": ["v1", "v2", "v3", "v4"]
     },
     "image_text": {
       "type": "image-with-text",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Warum kontinuierlich?",
+        "heading": "Ein Trend sagt mehr als eine Momentaufnahme",
+        "text": "<p>Ein einzelner Wert ist nur ein Schnappschuss. Wer seine Biomarker über die Zeit verfolgt, erkennt Entwicklungen früh und versteht, wie der eigene Körper auf Lebensstil, Ernährung und Training reagiert.</p>",
+        "button_text": "Pläne ansehen",
+        "button_link": "#pricing"
+      }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
         "t1": { "type": "testimonial", "settings": { "quote": "Endlich verstehe ich meine Werte. Der Test war super einfach und das Ergebnis verständlich erklärt.", "author": "Anna M." } },
         "t2": { "type": "testimonial", "settings": { "quote": "Schnell, diskret und unkompliziert. Ich tracke jetzt regelmäßig meine Gesundheit.", "author": "Thomas K." } },
-        "t3": { "type": "testimonial", "settings": { "quote": "Die Beratung war top und ich fühle mich endlich gut informiert.", "author": "Lisa R." } }
+        "t3": { "type": "testimonial", "settings": { "quote": "Die Einordnung der Werte war top und ich fühle mich endlich gut informiert.", "author": "Lisa R." } }
       },
       "block_order": ["t1", "t2", "t3"]
     },
@@ -49,16 +92,18 @@
       "type": "faq",
       "blocks": {
         "f1": { "type": "qa", "settings": { "question": "Wie funktioniert die Probenentnahme?", "answer": "<p>Die Entnahme erfolgt einfach und schmerzarm zuhause. Eine bebilderte Anleitung liegt jedem Kit bei.</p>" } },
-        "f2": { "type": "qa", "settings": { "question": "Wie schnell erhalte ich meine Ergebnisse?", "answer": "<p>In der Regel innerhalb von 3 Tagen nach Eingang Ihrer Probe im Labor.</p>" } },
-        "f3": { "type": "qa", "settings": { "question": "Sind meine Daten sicher?", "answer": "<p>Ja. Wir verarbeiten Ihre Daten DSGVO-konform und verschlüsselt.</p>" } },
-        "f4": { "type": "qa", "settings": { "question": "Kann ich mein Abo jederzeit kündigen?", "answer": "<p>Ja, Sie können jederzeit flexibel pausieren oder kündigen.</p>" } }
+        "f2": { "type": "qa", "settings": { "question": "Was ist der Unterschied zwischen Core und Core+?", "answer": "<p>Core umfasst 11 Biomarker zu Stoffwechsel, Herz-Kreislauf, Entzündung sowie Leber- und Nierenfunktion. Core+ erweitert dies auf 16 Marker – u. a. Vitamin D, Ferritin, TSH, Holo-TC und eine einmalige Lp(a)-Bestimmung.</p>" } },
+        "f3": { "type": "qa", "settings": { "question": "Ersetzt Preventura den Arztbesuch?", "answer": "<p>Nein. Die Ergebnisse dienen deiner Information und einer ersten Einordnung. Sie ersetzen keine ärztliche Diagnose oder Behandlung. Bei Beschwerden wende dich bitte an deine Ärztin oder deinen Arzt.</p>" } },
+        "f4": { "type": "qa", "settings": { "question": "Wie schnell erhalte ich meine Ergebnisse?", "answer": "<p>In der Regel innerhalb weniger Tage nach Eingang deiner Probe im Labor – verständlich aufbereitet in deinem Dashboard.</p>" } },
+        "f5": { "type": "qa", "settings": { "question": "Sind meine Daten sicher?", "answer": "<p>Ja. Wir verarbeiten deine Daten DSGVO-konform und verschlüsselt.</p>" } },
+        "f6": { "type": "qa", "settings": { "question": "Kann ich mein Abo jederzeit kündigen?", "answer": "<p>Ja, du kannst dein Abo jederzeit flexibel pausieren oder kündigen.</p>" } }
       },
-      "block_order": ["f1", "f2", "f3", "f4"]
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {}
     }
   },
-  "order": ["hero", "value_props", "how_it_works", "featured", "image_text", "testimonials", "faq", "newsletter"]
+  "order": ["hero", "pricing", "how_it_works", "comparison", "value_props", "image_text", "testimonials", "faq", "newsletter"]
 }
