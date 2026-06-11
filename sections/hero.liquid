@@ -1,0 +1,132 @@
+<div class="hero hero--{{ section.settings.layout }}" style="background:{{ section.settings.background }};">
+  <div class="page-width hero__inner">
+    <div class="hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="hero__heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <div class="hero__subheading rte">{{ section.settings.subheading }}</div>
+      {%- endif -%}
+      <div class="hero__buttons">
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--large">{{ section.settings.button_text }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_text_2 != blank -%}
+          <a href="{{ section.settings.button_link_2 }}" class="btn btn--ghost btn--large">{{ section.settings.button_text_2 }}</a>
+        {%- endif -%}
+      </div>
+      {%- if section.blocks.size > 0 -%}
+        <ul class="hero__badges">
+          {%- for block in section.blocks -%}
+            <li class="hero__badge" {{ block.shopify_attributes }}>
+              {% render 'icon', name: 'check' %}
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="hero__media">
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', class: 'hero__image', sizes: '(min-width: 990px) 50vw, 100vw', widths: '400,600,800,1000,1200' }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "split", "label": "Text + Bild nebeneinander" },
+        { "value": "centered", "label": "Zentriert" }
+      ],
+      "default": "split"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Kleiner Text oben",
+      "default": "Gesundheit verstehen"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Kennen Sie Ihren Körper. Bevor es zählt."
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Untertitel",
+      "default": "<p>Einfache Gesundheitstests für zuhause. Verfolgen Sie Ihre Werte, erkennen Sie Risiken früh und treffen Sie bessere Entscheidungen – ganz ohne Wartezimmer.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button 1 Text",
+      "default": "Jetzt starten"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button 2 Text",
+      "default": "So funktioniert's"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Hintergrundfarbe",
+      "default": "#eef6f3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Trust-Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Ergebnisse in 3 Tagen"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        { "type": "badge", "settings": { "text": "Bequem von zuhause" } },
+        { "type": "badge", "settings": { "text": "Zertifizierte Labore" } },
+        { "type": "badge", "settings": { "text": "Jederzeit kündbar" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

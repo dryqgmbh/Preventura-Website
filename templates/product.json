@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "icon": "truck", "text": "Kostenloser Versand & Rücksendung" } },
+        "t2": { "type": "trust", "settings": { "icon": "lab", "text": "Auswertung durch zertifizierte Labore" } },
+        "t3": { "type": "trust", "settings": { "icon": "shield", "text": "DSGVO-konform & verschlüsselt" } }
+      },
+      "block_order": ["t1", "t2", "t3"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": { "background": "#eef6f3" }
+    }
+  },
+  "order": ["main", "faq"]
+}

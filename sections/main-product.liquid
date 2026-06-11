@@ -1,0 +1,117 @@
+<div class="section product-page">
+  <div class="page-width product-page__inner">
+    <div class="product-gallery" data-product-gallery>
+      {%- if product.featured_media -%}
+        <div class="product-gallery__main">
+          {{ product.featured_media | image_url: width: 1000 | image_tag: loading: 'eager', class: 'product-gallery__image', id: 'ProductMainImage', sizes: '(min-width: 990px) 50vw, 100vw', widths: '400,600,800,1000' }}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="product-gallery__thumbs">
+            {%- for media in product.media -%}
+              <button class="product-gallery__thumb" data-thumb data-media-url="{{ media | image_url: width: 1000 }}" aria-label="Bild {{ forloop.index }}">
+                {{ media | image_url: width: 160 | image_tag: loading: 'lazy', class: 'product-gallery__thumb-image' }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'product-gallery__image placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="product-info">
+      {%- if product.vendor != blank and section.settings.show_vendor -%}
+        <p class="product-info__vendor">{{ product.vendor }}</p>
+      {%- endif -%}
+      <h1 class="product-info__title">{{ product.title }}</h1>
+
+      <div class="product-info__price" data-price-wrapper>
+        {% render 'price', product: product %}
+      </div>
+
+      {%- if product.description != blank -%}
+        <div class="product-info__description rte">{{ product.description }}</div>
+      {%- endif -%}
+
+      {% form 'product', product, class: 'product-form', data-product-form: '' %}
+        {%- unless product.has_only_default_variant -%}
+          <div class="product-options">
+            {%- for option in product.options_with_values -%}
+              <div class="product-option">
+                <label class="product-option__label">{{ option.name }}</label>
+                <div class="product-option__values">
+                  {%- for value in option.values -%}
+                    <label class="product-option__chip">
+                      <input type="radio" name="option-{{ option.position }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} data-option-input>
+                      <span>{{ value }}</span>
+                    </label>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endunless -%}
+
+        <select name="id" data-variant-select hidden>
+          {%- for variant in product.variants -%}
+            <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %} {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+              {{ variant.title }}
+            </option>
+          {%- endfor -%}
+        </select>
+
+        <div class="product-form__actions">
+          <div class="quantity-selector">
+            <button type="button" class="quantity-selector__btn" data-qty-minus aria-label="-">&minus;</button>
+            <input type="number" name="quantity" value="1" min="1" class="quantity-selector__input" data-qty-input>
+            <button type="button" class="quantity-selector__btn" data-qty-plus aria-label="+">&plus;</button>
+          </div>
+          <button type="submit" name="add" class="btn btn--primary btn--large btn--block" {% unless product.available %}disabled{% endunless %} data-add-to-cart>
+            <span>{% if product.available %}{{ 'products.product.add_to_cart' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
+          </button>
+        </div>
+      {% endform %}
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="product-trust">
+          {%- for block in section.blocks -%}
+            <div class="product-trust__item" {{ block.shopify_attributes }}>
+              {% render 'icon', name: block.settings.icon %}
+              <span>{{ block.settings.text }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Produkt",
+  "settings": [
+    { "type": "checkbox", "id": "show_vendor", "label": "Hersteller anzeigen", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust-Hinweis",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "truck", "label": "Versand" },
+            { "value": "shield", "label": "Schild" },
+            { "value": "lab", "label": "Labor" },
+            { "value": "clock", "label": "Uhr" }
+          ],
+          "default": "truck"
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Kostenloser Versand & Rücksendung" }
+      ]
+    }
+  ]
+}
+{% endschema %}

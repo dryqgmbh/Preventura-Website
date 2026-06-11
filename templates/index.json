@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "b1": { "type": "badge", "settings": { "text": "Bequem von zuhause" } },
+        "b2": { "type": "badge", "settings": { "text": "Zertifizierte Labore" } },
+        "b3": { "type": "badge", "settings": { "text": "Jederzeit kündbar" } }
+      },
+      "block_order": ["b1", "b2", "b3"]
+    },
+    "value_props": {
+      "type": "value-props",
+      "blocks": {
+        "v1": { "type": "prop", "settings": { "icon": "lab", "title": "Zertifizierte Labore", "text": "Analysen nach höchsten medizinischen Standards." } },
+        "v2": { "type": "prop", "settings": { "icon": "clock", "title": "Schnelle Ergebnisse", "text": "Verständliche Auswertung in wenigen Tagen." } },
+        "v3": { "type": "prop", "settings": { "icon": "shield", "title": "Datenschutz", "text": "Ihre Daten sind DSGVO-konform geschützt." } },
+        "v4": { "type": "prop", "settings": { "icon": "truck", "title": "Kostenloser Versand", "text": "Diskrete Lieferung und Rücksendung inklusive." } }
+      },
+      "block_order": ["v1", "v2", "v3", "v4"]
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "1. Test bestellen", "text": "Wählen Sie Ihren Gesundheitstest – diskret nach Hause geliefert." } },
+        "s2": { "type": "step", "settings": { "title": "2. Probe entnehmen", "text": "Einfache Entnahme zuhause in wenigen Minuten und kostenlos zurücksenden." } },
+        "s3": { "type": "step", "settings": { "title": "3. Ergebnisse erhalten", "text": "Verständliche Auswertung in Ihrem Dashboard – inkl. Empfehlungen." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": { "products_to_show": 4 }
+    },
+    "image_text": {
+      "type": "image-with-text",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "quote": "Endlich verstehe ich meine Werte. Der Test war super einfach und das Ergebnis verständlich erklärt.", "author": "Anna M." } },
+        "t2": { "type": "testimonial", "settings": { "quote": "Schnell, diskret und unkompliziert. Ich tracke jetzt regelmäßig meine Gesundheit.", "author": "Thomas K." } },
+        "t3": { "type": "testimonial", "settings": { "quote": "Die Beratung war top und ich fühle mich endlich gut informiert.", "author": "Lisa R." } }
+      },
+      "block_order": ["t1", "t2", "t3"]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "f1": { "type": "qa", "settings": { "question": "Wie funktioniert die Probenentnahme?", "answer": "<p>Die Entnahme erfolgt einfach und schmerzarm zuhause. Eine bebilderte Anleitung liegt jedem Kit bei.</p>" } },
+        "f2": { "type": "qa", "settings": { "question": "Wie schnell erhalte ich meine Ergebnisse?", "answer": "<p>In der Regel innerhalb von 3 Tagen nach Eingang Ihrer Probe im Labor.</p>" } },
+        "f3": { "type": "qa", "settings": { "question": "Sind meine Daten sicher?", "answer": "<p>Ja. Wir verarbeiten Ihre Daten DSGVO-konform und verschlüsselt.</p>" } },
+        "f4": { "type": "qa", "settings": { "question": "Kann ich mein Abo jederzeit kündigen?", "answer": "<p>Ja, Sie können jederzeit flexibel pausieren oder kündigen.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "value_props", "how_it_works", "featured", "image_text", "testimonials", "faq", "newsletter"]
+}

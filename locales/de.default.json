@@ -1,0 +1,71 @@
+{
+  "general": {
+    "navigation": "Navigation",
+    "meta": {
+      "tags": "Markiert mit {{ tags }}",
+      "page": "Seite {{ page }}"
+    },
+    "search": {
+      "title": "Suche",
+      "search": "Suchen",
+      "placeholder": "Wonach suchen Sie?",
+      "no_results": "Keine Ergebnisse für „{{ terms }}“.",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis für „{{ terms }}“",
+        "other": "{{ count }} Ergebnisse für „{{ terms }}“"
+      }
+    },
+    "cart": {
+      "title": "Warenkorb"
+    },
+    "newsletter": {
+      "placeholder": "Ihre E-Mail-Adresse",
+      "button": "Anmelden",
+      "success": "Vielen Dank für Ihre Anmeldung!"
+    },
+    "footer": {
+      "rights": "Alle Rechte vorbehalten."
+    },
+    "404": {
+      "title": "Diese Seite konnte leider nicht gefunden werden.",
+      "link": "Zur Startseite"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Zum Inhalt springen",
+    "refresh_page": "Bei Auswahl wird die Seite vollständig aktualisiert."
+  },
+  "homepage": {
+    "onboarding": {
+      "product_title": "Beispielprodukt"
+    }
+  },
+  "collections": {
+    "view_all": "Alle ansehen",
+    "empty": "Diese Kollektion enthält keine Produkte.",
+    "all_title": "Kollektionen"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "In den Warenkorb",
+      "sold_out": "Ausverkauft",
+      "on_sale": "Angebot"
+    }
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist aktuell leer.",
+    "continue_shopping": "Weiter einkaufen",
+    "subtotal": "Zwischensumme",
+    "shipping_note": "Versandkosten und Rabatte werden an der Kasse berechnet.",
+    "update": "Aktualisieren",
+    "checkout": "Zur Kasse",
+    "quantity": "Menge",
+    "remove": "Entfernen"
+  },
+  "customer": {
+    "account": {
+      "title": "Konto"
+    }
+  }
+}

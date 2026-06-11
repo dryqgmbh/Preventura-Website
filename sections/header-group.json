@@ -1,0 +1,21 @@
+{
+  "type": "header",
+  "name": "Header-Gruppe",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "Kostenloser Versand ab 50 € – Ihre Gesundheit, unsere Mission",
+        "show_announcement": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "sticky_header": true
+      }
+    }
+  },
+  "order": ["announcement", "header"]
+}

@@ -1,0 +1,22 @@
+{
+  "current": {
+    "color_primary": "#0b6b5f",
+    "color_accent": "#e9a23b",
+    "color_text": "#1c2b2a",
+    "color_background": "#ffffff",
+    "color_surface": "#f5faf8",
+    "type_heading_font": "assistant_n6",
+    "type_body_font": "assistant_n4",
+    "page_width": 1280,
+    "corner_radius": 14
+  },
+  "presets": {
+    "Preventura": {
+      "color_primary": "#0b6b5f",
+      "color_accent": "#e9a23b",
+      "color_text": "#1c2b2a",
+      "color_background": "#ffffff",
+      "color_surface": "#f5faf8"
+    }
+  }
+}

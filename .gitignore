@@ -1,0 +1,10 @@
+# Shopify CLI
+.shopify/
+*.zip
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/

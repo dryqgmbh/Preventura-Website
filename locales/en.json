@@ -1,0 +1,71 @@
+{
+  "general": {
+    "navigation": "Navigation",
+    "meta": {
+      "tags": "Tagged with {{ tags }}",
+      "page": "Page {{ page }}"
+    },
+    "search": {
+      "title": "Search",
+      "search": "Search",
+      "placeholder": "What are you looking for?",
+      "no_results": "No results for “{{ terms }}”.",
+      "results_with_count": {
+        "one": "{{ count }} result for “{{ terms }}”",
+        "other": "{{ count }} results for “{{ terms }}”"
+      }
+    },
+    "cart": {
+      "title": "Cart"
+    },
+    "newsletter": {
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "Thanks for subscribing!"
+    },
+    "footer": {
+      "rights": "All rights reserved."
+    },
+    "404": {
+      "title": "Sorry, this page could not be found.",
+      "link": "Back to homepage"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "refresh_page": "Choosing a selection results in a full page refresh."
+  },
+  "homepage": {
+    "onboarding": {
+      "product_title": "Example product"
+    }
+  },
+  "collections": {
+    "view_all": "View all",
+    "empty": "This collection has no products.",
+    "all_title": "Collections"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "on_sale": "Sale"
+    }
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is currently empty.",
+    "continue_shopping": "Continue shopping",
+    "subtotal": "Subtotal",
+    "shipping_note": "Shipping and discounts are calculated at checkout.",
+    "update": "Update",
+    "checkout": "Checkout",
+    "quantity": "Quantity",
+    "remove": "Remove"
+  },
+  "customer": {
+    "account": {
+      "title": "Account"
+    }
+  }
+}

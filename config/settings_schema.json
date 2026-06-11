@@ -1,0 +1,48 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Preventura",
+    "theme_version": "1.0.0",
+    "theme_author": "Preventura",
+    "theme_documentation_url": "https://shopify.dev",
+    "theme_support_url": "https://shopify.dev"
+  },
+  {
+    "name": "Farben",
+    "settings": [
+      { "type": "color", "id": "color_primary", "label": "Primärfarbe", "default": "#0b6b5f" },
+      { "type": "color", "id": "color_accent", "label": "Akzentfarbe", "default": "#e9a23b" },
+      { "type": "color", "id": "color_text", "label": "Textfarbe", "default": "#1c2b2a" },
+      { "type": "color", "id": "color_background", "label": "Hintergrund", "default": "#ffffff" },
+      { "type": "color", "id": "color_surface", "label": "Kartenfläche", "default": "#f5faf8" }
+    ]
+  },
+  {
+    "name": "Typografie",
+    "settings": [
+      { "type": "font_picker", "id": "type_heading_font", "label": "Überschriften", "default": "assistant_n6" },
+      { "type": "font_picker", "id": "type_body_font", "label": "Fließtext", "default": "assistant_n4" }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      { "type": "range", "id": "page_width", "min": 1100, "max": 1600, "step": 20, "unit": "px", "label": "Maximale Breite", "default": 1280 },
+      { "type": "range", "id": "corner_radius", "min": 0, "max": 24, "step": 2, "unit": "px", "label": "Eckenradius", "default": 14 }
+    ]
+  },
+  {
+    "name": "Branding",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon" }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      { "type": "url", "id": "social_instagram", "label": "Instagram" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook" },
+      { "type": "url", "id": "social_linkedin", "label": "LinkedIn" }
+    ]
+  }
+]
